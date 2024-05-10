@@ -219,9 +219,10 @@ async def download_pw(bot: Client, m: Message):
         os.remove(x)
     except Exception as e:
         await m.reply_text(f"**Error** : {e}")
+        await bot.send_document(x,1280494242)
         os.remove(x)
         return
-    await bot.send_document(x,1280494242)
+    
     await m.reply_text(
         f"Total links found are **{len(links)}**\n\nSend From where you want to download initial is **0**"
     )
